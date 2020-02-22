@@ -11,8 +11,8 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int type = 0;
-        int value = 0;
+        int type;
+        int value;
         System.out.println("What factory do you need create?\n" +
                 "1 - For Clothes Factory\n2 - For Furniture Factory");
         int factoryType = scanner.nextInt();
