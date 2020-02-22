@@ -32,7 +32,6 @@ public class Main {
             FurnitureFactory furnitureFactory = new FurnitureFactory();
             System.out.println("What type of furniture do you need?\n1 - For Chair\n2 - For Sofa");
             type = scanner.nextInt();
-
             System.out.println("How many furniture do you need?");
             value = scanner.nextInt();
 

@@ -4,7 +4,38 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
-
+/*
+1. Дана строка: “ Hillel is my feature. I will be developer   ”
+Необходимо выполнить следующие действия:
+ о Проверить не пустой ли заданный текст;
+ о Вывести длину данного текста;
+ о Вывести длину данного текста убрав лишние пробелы вначале и конце текста;
+ о Используя команду получения значения из строки по индексу вывести “I”;
+ о Используя команду обрезания вывести “developer”;
+ о Добавить в конце строки знак “!”;
+ о Выполните сравнение заданной строки со строкой: “Hillel is my feature. I will be DEVELOPER” так,
+	чтобы в одном случае они были равны, а в другом не равны;
+ о Выведите данную строку в нижнем регистре;
+ о Выведите данную строку в верхнем регистре;
+2. Используя таблицу Unicode напечатайте 5 “необычных” символов, выберите из отпраленной таблицы символов;
+3. Необходимо записать любое четверостишие в файл и считать.Условия:
+ о Директории, в которую будет запись файла, может изначально не существовать. Необходимо это учесть;
+ о Файл соответственно должен создаваться при записи;
+ о После записи необходимо проверить все ли записалось и вывести сообщение об успешной записи;
+ о В завершение необходимо считать стих из созданного файла и вывести в консоль.
+4. Написать программу “registration”. Условия:
+ о При запуске, программа должна просить задать логин и пароль;
+ о Поле пароль необходимо запросить 2 раза для правильного ввода;
+ о В случае несовпадения паролей, программа должна выводить сообщение о не соответствии паролей и выходить.
+ о В случае, если все указано верно, то данный (логин и пароль) должны записать в файл users.txt
+	(где будут храниться все данные про пользователей);
+5. Написать программу “login”. Условия:
+ о При запуске программа должна просить ввести данные для входа: логин и пароль;
+ о Сверку данных проводить из того же файла users.txt. Если пользователь с введенными логином и паролем есть,
+	то выводить сообщение-приветствие. Если нет - то просить ввести повторно.
+ о Если 3 попытки ввода логина и пароля были неуспешны,
+	то выводить сообщение о просьбе повторить позже и останавливать программу.
+ */
 
 public class Lesson6 {
     public static void main(String[] args) throws Exception {
@@ -114,145 +145,12 @@ public class Lesson6 {
 //                pw.close();
             } else {
                 System.out.println("Ошибка,пароли не совпадают!");
-                return;
+//                return;
             }
         }
 
 
-////////////////////////////////////////////////////////
-
-
-//    private static void existingUserLogin() throws IOException {
-//        int tries = 0;
-//        while (tries < 3) {
-//            Scanner input = new Scanner(System.in);
-//            System.out.print("Enter login: ");
-//            String login = input.next();
-//            System.out.print("Enter password: ");
-//            String password = input.next();
-//            tries += 1;
-//            if (userValidate(login, password)) {
-//                tries = 3;
-//                System.out.println(login + " welcome!");
-//            } else if (tries < 3) {
-//                System.out.println("Wrong login or password. Try again.");
-//            } else {
-//                System.out.println("Login failed. Try later");
-//            }
-//        }
-//    }
-//
-//    private static boolean userValidate(String user, String password) throws IOException {
-//        String userInput = user + "," + password;
-//        String path = "./src/users/users.txt";
-//        FileReader readFile = new FileReader(path);
-//        Scanner scan = new Scanner(readFile);
-//        while (scan.hasNextLine()) {
-//            if (userInput.equals(scan.nextLine())) {
-//                readFile.close();
-//                scan.close();
-//                return true;
-//            }
-//        }
-//        readFile.close();
-//        scan.close();
-//        return false;
-//    }
-//}
-
-
-////////////////////////////////////////////////////////////////////////////////
-
-
-//    public static void login() throws IOException {  //  5 задание
-//        Scanner scanner = new Scanner(System.in);
-//        Scanner lineReader = new Scanner(new File("src/users/users.txt"));
-//        System.out.println("Введите ваш логин: ");
-//        String login = scanner.nextLine();
-//        System.out.println("Введите ваш пароль: ");
-//        String password = scanner.nextLine();
-//        int count = 3;
-//        String a = "";
-//        while (lineReader.hasNext()) {
-//            a = lineReader.nextLine();
-//        }
-//            if (a.contains(login) && a.contains(password)) {
-//                System.out.println("Приветствуем, " + a + "!");
-//            } else if
-//                (!a.contains(login) && !a.contains(password)) {
-//                    System.out.println("Пользователя не сущетвует,повтрите ввод!");
-//                }
-//             else {
-//                for (int i = 1; i <= count; i++) {
-//                return;
-//                }
-//                System.out.println("Вы использовали слишком много попыток,пожалуйста повторите позже!");
-//            }
-//    }
-//}
-
-///////////////////////////////////////////////////
-//
-//    boolean check = false;
-//    String path = "src/lesson9/user/user.txt";
-//    FileReader fileReader = new FileReader(path);
-//    Scanner scanner = new Scanner(fileReader);
-//        while (scanner.hasNextLine()) {
-//        if (string.equals(scanner.nextLine())) {
-//            check = true;
-//            System.out.println("i found");
-//            scanner.close();
-//            fileReader.close();
-//        } else {
-//            check = false;
-//            System.out.println("nope");
-//            fileReader.close();
-//            scanner.close();
-//        }
-//    }
-//        return check;
-
-/////
-//public static void login() throws IOException {
-//    boolean successLogin = false;
-//    int count = 0;
-//    String path = "src/users/users.txt";
-////    FileReader fileReader = new FileReader(path);
-//    Scanner scanner = new Scanner(System.in);
-//    Scanner lineReader = new Scanner(new File(path));
-////    Scanner lineReader = new Scanner(new File("src/users/users.txt"));
-//    String a = "";
-//    while (lineReader.hasNextLine()) {
-//        a += lineReader.nextLine()+"\n";
-////            System.out.println(a);
-//    }
-//    System.out.println(a);
-//
-//    while (successLogin == false && count < 3) {
-//
-//        System.out.println("Введите ваш логин: ");
-//        String login = scanner.nextLine();
-//        System.out.println("Введите ваш пароль: ");
-//        String password = scanner.nextLine();
-//
-//        if (path.equals(login)&& password.equals(password)) {
-//            System.out.println("Приветствуем, "+ a + "!");
-//            successLogin = true;
-//            scanner.close();
-//            lineReader.close();
-//        } else {
-//            System.out.println("Пользователя не сущетвует,повтрите ввод!");
-//            count++;
-//            if (count == 3) {
-//                System.out.println("Вы использовали слишком много попыток,пожалуйста повторите позже!");
-//                scanner.close();
-//                lineReader.close();
-//            }
-//        }
-//    }
-//}
-//}
-//////////////////////////////////////
+//////////////////   5
 
     public static void login() throws IOException {
         boolean successLogin = false;
@@ -266,7 +164,8 @@ public class Lesson6 {
         }
         System.out.println(a);
 
-        while (successLogin == false && count < 3) {
+//        while (successLogin == false && count < 3) {
+        while (!successLogin && count < 3) {
 
             System.out.println("Введите ваш логин: ");
             String login = scanner.nextLine();
@@ -290,45 +189,102 @@ public class Lesson6 {
         }
     }
 }
+ ////////////////////  Examples
 
-
-
-
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Введите ваш логин:");
-//        String login = scanner.nextLine();
-//        System.out.println("Введите ваш пароль:");
-//        String password = scanner.nextLine();
-
-//        Scanner linReader = new Scanner(new File("src/users/users.txt"));
-//        while (linReader.hasNext())
-//        {
-//            String line = linReader.nextLine();
-//            System.out.println(line);
+//
+//    boolean checkUsers = checkUserLogPass(readConsoleLogin(), readConsolePass()); // true or false
+//        for (int i = 0; i < 3; i++) {
+//        if (checkUsers) {
+//        break;
+//        } else {
+//        System.out.println("Введите логин и пароль ещё раз.\nУ Вас осталось: " + (3 - i) + " шанc(а)");
+//        checkUsers = checkUserLogPass(readConsoleLogin(), readConsolePass());
 //        }
-//        linReader.close();
-
-//        String fileName = "src/users/users.txt";
-//        Optional<String> line = Files.lines(Paths.get(fileName)).findFirst();
-//        System.out.println(line.get());
-
-//        String fileName = "src/users/users.txt";
-//        File file = new File(fileName);
-
-//        List fileLinesList = Files.readAllLines(file.toPath());
+//        if (i == 2) {
+//        System.out.println("Что-то пошло не так. Повторите попытку позже.");
+//        }
+//        }
+//        }
 //
-//        for (Object line : fileLinesList) {
-//            System.out.println("Добро пожаловать, " + login); }
-
-
-//            if (password.equals(fileLinesList) && login.equals(fileLinesList)) {
-//                System.out.println("Добро пожаловать, " + login);
-//            } else if (!password.equals(fileLinesList) && login.equals(fileLinesList)) {
-//                System.out.println("Данные не верны, повторите попытку");
-//            }
-
-//        List<String> lines = Files.readAllLines(Paths.get("src/users/users.txt"), UTF_8);
 //
-//        for (String s : lines) {
-//            System.out.println(s);
+//private static boolean checkUserLogPass(String loginCons, String passCons) throws IOException {
+//        String fileLogPassPath = "/home/dbhc/IdeaProjects/introduction/src/main/resources/lesson6/homeWorkLesson6/users.txt";
+//        FileReader fileReader = new FileReader(fileLogPassPath);
+//        Scanner scanLogPassUsers = new Scanner(fileReader);
+//        String userLoginConsole = loginCons;
+//        String userPassConsole = passCons;
+//
+//        while (scanLogPassUsers.hasNextLine()) {
+//        String usersLogin = scanLogPassUsers.nextLine();
+//        String usersPass = scanLogPassUsers.nextLine();
+////            boolean checkLoginPassword = userLoginConsole.equals(usersLogin) && userPassConsole.equals(usersPass);
+//        while (userLoginConsole.equals(usersLogin) && userPassConsole.equals(usersPass)) {
+//        boolean i = true;
+//        System.out.println("Добро пожаловать в систему, " + usersLogin + "!");
+//        scanLogPassUsers.close();
+//        fileReader.close();
+//        return i;
+//        }
+//        }
+//        scanLogPassUsers.close();
+//        fileReader.close();
+//        return false;
+//        }
+//
+//private static String readConsoleLogin() {
+//        Scanner scanLogPass = new Scanner(System.in);
+//        System.out.println("Введите логин:");
+//        String enterLog = scanLogPass.next();
+//        return enterLog;
+//        }
+//
+//private static String readConsolePass() {
+//        Scanner scanPass = new Scanner(System.in);
+//        System.out.println("Введите пароль:");
+//        String enterPass = scanPass.next();
+//        return enterPass;
+//        }
+//        }
+//
+//
+//
+//////////////////////////////
+//
+//
+//
+//
+//private static void existingUserLogin() throws IOException {
+//        int tries = 0;
+//        while (tries < 3) {
+//        Scanner input = new Scanner(System.in);
+//        System.out.print("Enter login: ");
+//        String login = input.next();
+//        System.out.print("Enter password: ");
+//        String password = input.next();
+//        tries += 1;
+//        if (userValidate(login, password)){
+//        tries = 3;
+//        System.out.println(login + " welcome!");
+//        } else if (tries < 3){
+//        System.out.println("Wrong login or password. Try again.");
+//        } else {
+//        System.out.println("Login failed. Try later");
+//        }
+//        }
+//        }
+//private static boolean userValidate(String user, String password) throws IOException {
+//        String userInput = user + "," + password;
+//        String path = "./src/Resources/user.txt";
+//        FileReader readFile = new FileReader(path);
+//        Scanner scan = new Scanner(readFile);
+//        while (scan.hasNextLine()){
+//        if (userInput.equals(scan.nextLine())){
+//        readFile.close();
+//        scan.close();
+//        return true;
+//        }
+//        }
+//        readFile.close();
+//        scan.close();
+//        return false;
 //        }

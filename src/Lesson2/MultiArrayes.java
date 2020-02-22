@@ -3,10 +3,17 @@ package Lesson2;
 import java.sql.SQLOutput;
 import java.util.*;
 import java.util.Random;
+/*
+6.  Создайте многомерный массив, в котором будет 3 строки и 3 столбца. Запишите в него числа от 1 до 9.
+
+Выполните с данным массивом определенные действия, чтобы числа хранились от 9 до 1.
+
+Выведите результат до и после изменения многомерного массива.
+ */
 import java.util.Arrays;
 public class MultiArrayes {
     public static void main(String[] args) {
-        int matrixB[][] = new int[3][];
+        int[][] matrixB = new int[3][];
         matrixB[0] = new int[]{1, 2, 3};
         matrixB[1] = new int[]{4, 5, 6};
         matrixB[2] = new int[]{7, 8, 9};
