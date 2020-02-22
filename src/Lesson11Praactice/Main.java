@@ -10,7 +10,6 @@ public class Main {
     private final static int FURNITURE_FACTORY_TYPE = 2;
 
     public static void main(String[] args) {
-        System.out.println("Start Lesson");
         Scanner scanner = new Scanner(System.in);
         int type = 0;
         int value = 0;

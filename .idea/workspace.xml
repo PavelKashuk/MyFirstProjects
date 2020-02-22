@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9fa50974-511d-4d4d-ac5b-22c8027eeda1" name="Default Changelist" comment="">
+    <list default="true" id="9fa50974-511d-4d4d-ac5b-22c8027eeda1" name="Default Changelist" comment="Delete text">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lesson11Praactice/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lesson11Praactice/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +136,20 @@
       <option name="presentableId" value="Default" />
       <updated>1576843045879</updated>
     </task>
+    <task id="LOCAL-00001" summary="Create text">
+      <created>1582366108662</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582366108662</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create text" />
+    <MESSAGE value="Delete text" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete text" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2067" y="177" key="#Inspections" timestamp="1581695965613">
@@ -155,10 +169,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="618" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1579704010174" />
-    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1582365403537">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1582366224423">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582365403537" />
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582366224423" />
     <state x="779" y="290" key="FileChooserDialogImpl" timestamp="1576854393189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -183,6 +197,10 @@
     </state>
     <state width="1025" height="157" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581081264308" />
     <state width="902" height="130" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582216303421" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1582366112895">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1582366112895" />
     <state x="1920" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1582279629915">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
