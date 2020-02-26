@@ -1,4 +1,5 @@
 package Lesson12;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -7,10 +8,14 @@ public class Main {
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
         addSixObjectsIfEmptyList(linkedList);
-        System.out.println(linkedList);
+//        System.out.println(linkedList);
+//        checkInstance(linkedList);
+//        System.out.println(linkedList);
+        System.out.println(checkInstance(linkedList));
         callMethods(linkedList);
-//        System.out.println(checkInstance(linkedList)); //concurrent modification exception here
         linkedList.clear();
+
+        HashSet set = new HashSet();
     }
 
 
@@ -29,28 +34,57 @@ public class Main {
         return linkedList;
     }
 
-    static LinkedList checkInstance(LinkedList linkedList) {
+//    static LinkedList checkInstance(LinkedList linkedList) {
+//        int classOneCount = 0;
+//        int classTwoCount = 0;
+//        int classThreeCount = 0;
+//
+//        for (Object elem:linkedList) {
+//            if (elem instanceof ClassOne) {
+//                classOneCount++;
+//                if (classOneCount > 2) {
+//                    linkedList.remove(elem);
+//                }
+//            }
+//            if (elem instanceof ClassTwo) {
+//                classTwoCount++;
+//                if (classTwoCount > 2) {
+//                    linkedList.remove(elem);
+//                }
+//            }
+//            if (elem instanceof ClassThree) {
+//                classThreeCount++;
+//                if (classThreeCount > 2) {
+//                    linkedList.remove(elem);
+//                }
+//            }
+//        }
+//        return linkedList;
+//    }
+
+    public static LinkedList checkInstance(LinkedList linkedList) {
         int classOneCount = 0;
         int classTwoCount = 0;
         int classThreeCount = 0;
 
-        for (Object elem:linkedList) {
-            if (elem instanceof ClassOne) {
+        for (int i = 0; i <linkedList.size() ; i++) {
+            if (linkedList.get(i) instanceof ClassOne) {
                 classOneCount++;
                 if (classOneCount > 2) {
-                    linkedList.remove(elem);
+                    linkedList.remove(i);
+                    i--;
                 }
-            }
-            if (elem instanceof ClassTwo) {
+            } else if (linkedList.get(i) instanceof ClassTwo) {
                 classTwoCount++;
                 if (classTwoCount > 2) {
-                    linkedList.remove(elem);
+                    linkedList.remove(i);
+                    i--;
                 }
-            }
-            if (elem instanceof ClassThree) {
+            } else if (linkedList.get(i) instanceof ClassThree) {
                 classThreeCount++;
                 if (classThreeCount > 2) {
-                    linkedList.remove(elem);
+                    linkedList.remove(i);
+                    i--;
                 }
             }
         }
@@ -58,16 +92,15 @@ public class Main {
     }
 
     static void callMethods(LinkedList linkedList) {
-        for (Object elem : linkedList) {
-            if (elem instanceof ClassOne) {
-                ((ClassOne) elem).classOneMethod();
+        for (int i = 0; i <linkedList.size() ; i++) {
+            if (linkedList.get(i) instanceof ClassOne) {
+                ((ClassOne) linkedList.get(i)).classOneMethod();
             }
-            if (elem instanceof ClassTwo) {
-                ((ClassTwo) elem).classTwoMethod();
+            if (linkedList.get(i) instanceof ClassTwo) {
+                ((ClassTwo) linkedList.get(i)).classTwoMethod();
             }
-
-            if (elem instanceof ClassThree) {
-                ((ClassThree) elem).classthreeMethod();
+            if (linkedList.get(i) instanceof ClassThree) {
+                ((ClassThree) linkedList.get(i)).classthreeMethod();
             }
         }
     }
