@@ -17,19 +17,18 @@ import java.util.Set;
  */
 public class MainSecondTask {
     public static void main(String[] args) {
-    List<ClassThird> thirdClassLinkedList = new LinkedList<>();
-        thirdClassLinkedList.add(0, null);
-        thirdClassLinkedList.add(1, new ClassThird());
+    List<ClassThird> classThirdLinkedList = new LinkedList<>();
+        classThirdLinkedList.add(new ClassThird());
 
-    Set<ClassFirst> firstClassHashSet = new HashSet<>();
-        firstClassHashSet.add(new ClassFirst());
+    Set<ClassFirst> classFirstHashSet = new HashSet<>();
+        classFirstHashSet.add(new ClassFirst());
 
-    loadToCollections(thirdClassLinkedList, firstClassHashSet);
+    addAllToCollections(classThirdLinkedList, classFirstHashSet);
 }
 
-    public static void loadToCollections(LinkedList<? extends ClassSecond> linkedList,
-                                         HashSet<? super ClassSecond> hashSet) {
+    public static void addAllToCollections(List<? extends ClassSecond> List,
+                                         Set<? super ClassSecond> Set) {
 
-            hashSet.addAll(linkedList);
+            Set.addAll(List);
     }
 }
