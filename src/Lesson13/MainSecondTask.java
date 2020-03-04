@@ -26,9 +26,9 @@ public class MainSecondTask {
     addAllToCollections(classThirdLinkedList, classFirstHashSet);
 }
 
-    public static void addAllToCollections(List<? extends ClassSecond> List,
-                                         Set<? super ClassSecond> Set) {
+    public static void addAllToCollections(List<? extends ClassSecond> list,
+                                         Set<? super ClassSecond> set) {
 
-            Set.addAll(List);
+            set.addAll(list);
     }
 }
