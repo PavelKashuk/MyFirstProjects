@@ -28,7 +28,12 @@ public class Main {
         twoCatchExample();
         threeCatchExample();
         withResourcesExample();
-        withoutCatchExample();
+        try {
+            withoutCatchExample();
+        } catch (IOException e) {
+            System.out.println("Exception from method");
+//            e.printStackTrace();
+        }
     }
 
     public static void catchExample() {
@@ -39,10 +44,11 @@ public class Main {
         } catch (ActivityCompletedException | CancelException | ConfigurationException e) {
             System.out.println("Errors from First,Second and Third exceptions: " + e);
 //            e.printStackTrace();
-        }finally {
+        } finally {
             System.out.println("Always work");
         }
     }
+
     public static void twoCatchExample() {
         try {
             CallException.callFirstException();
@@ -54,7 +60,7 @@ public class Main {
         } catch (ConfigurationException e) {
             System.out.println("Error from Third Exception: " + e);
 //            e.printStackTrace();
-        }finally {
+        } finally {
             System.out.println("Always work");
         }
     }
@@ -73,46 +79,56 @@ public class Main {
         } catch (ConfigurationException e) {
             System.out.println("Third Error: " + e);
 //            e.printStackTrace();
-        }finally {
+        } finally {
             System.out.println("Always work");
         }
     }
 
     public static void withResourcesExample() {
-       String path;
-        path = "C:/Users/SASHA/IdeaProjects/MyFirstProjects/src/Lesson14/test/test";
-        try (FileReader fileReader = new FileReader(path);
-             Scanner scanner = new Scanner(fileReader)) {
-            if (scanner.hasNextLine()) {
-                try {
-                    CallException.callFirstException();
-                    CallException.callSecondException();
-                    CallException.callThirdException();
-                } catch (ActivityCompletedException | CancelException | ConfigurationException e) {
-                    System.out.println("Errors from First,Second and Third exceptions: " + e);
-//                    e.printStackTrace();
-                }
-            }
-        } catch (IOException e) {
-            System.out.println("FileReader or Scanner exception: " + e);
-//            e.printStackTrace();
-        }finally {
-            System.out.println("Always work");
-        }
-    }
-
-     public static void withoutCatchExample() {
+        String path = "C:/Users/SASHA/IdeaProjects/MyFirstProjects/src/Lesson14/test/test";
+        FileReader fileReader = null;
         try {
-            throw new RuntimeException();
-        }finally {
+            fileReader = new FileReader(path);
             try {
                 CallException.callFirstException();
                 CallException.callSecondException();
                 CallException.callThirdException();
             } catch (ActivityCompletedException | CancelException | ConfigurationException e) {
                 System.out.println("Errors from First,Second and Third exceptions: " + e);
-//                e.printStackTrace();
+//                    e.printStackTrace();
+            }
+        } catch (IOException e) {
+            System.out.println("FileReader or Scanner exception: " + e);
+//            e.printStackTrace();
+        } finally {
+            try {
+                if (fileReader != null) {
+                    fileReader.close();
+                }
+            } catch (IOException e) {
+                System.out.println("Can't close FileReader: " + e);
+            }
+            System.out.println("Always work");
+        }
+    }
+
+        public static void withoutCatchExample() throws IOException {
+            String path = "C:/Users/SASHA/IdeaProjects/MyFirstProjects/src/Lesson14/test/test";
+            try (FileReader fileReader = new FileReader(path)) {
+                try {
+                    CallException.callFirstException();
+                    CallException.callSecondException();
+                    CallException.callThirdException();
+                } catch (ActivityCompletedException | CancelException | ConfigurationException e) {
+                    System.out.println("Errors from First,Second and Third exceptions: " + e);
+                    //                    e.printStackTrace();
+                }
+            } finally {
+                System.out.println("Always work");
             }
         }
     }
-}
+
+
+
+
