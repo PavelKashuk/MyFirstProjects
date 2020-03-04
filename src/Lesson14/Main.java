@@ -86,28 +86,19 @@ public class Main {
 
     public static void withResourcesExample() {
         String path = "C:/Users/SASHA/IdeaProjects/MyFirstProjects/src/Lesson14/test/test";
-        FileReader fileReader = null;
-        try {
-            fileReader = new FileReader(path);
+        try (FileReader fileReader = new FileReader(path)) {
             try {
                 CallException.callFirstException();
                 CallException.callSecondException();
                 CallException.callThirdException();
             } catch (ActivityCompletedException | CancelException | ConfigurationException e) {
                 System.out.println("Errors from First,Second and Third exceptions: " + e);
-//                    e.printStackTrace();
+                //                    e.printStackTrace();
             }
         } catch (IOException e) {
-            System.out.println("FileReader or Scanner exception: " + e);
+            System.out.println("Read file exception: " + e);
 //            e.printStackTrace();
         } finally {
-            try {
-                if (fileReader != null) {
-                    fileReader.close();
-                }
-            } catch (IOException e) {
-                System.out.println("Can't close FileReader: " + e);
-            }
             System.out.println("Always work");
         }
     }
