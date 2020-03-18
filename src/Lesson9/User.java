@@ -20,11 +20,11 @@ public class User {
     public User() {
     }
 
-    public User(String name, String surname, String email, String pasword, String sex, String country) {
+    public User(String name, String surname, String email, String password, String sex, String country) {
         this.name = name;
         this.surname = surname;
         this.email = email;
-        this.password = pasword;
+        this.password = password;
         this.sex = sex;
         this.country = country;
     }
@@ -57,8 +57,8 @@ public class User {
         return password;
     }
 
-    public void setPassword(String pasword) {
-        this.password = pasword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getSex() {

@@ -10,8 +10,8 @@ public final class Admin extends User {
     public Admin() {
     }
 
-    public Admin(String name, String surname, String email, String pasword, String sex, String country) {
-        super(name, surname, email, pasword, sex, country);
+    public Admin(String name, String surname, String email, String password, String sex, String country) {
+        super(name, surname, email, password, sex, country);
     }
 
 
@@ -19,6 +19,7 @@ public final class Admin extends User {
         String path = "src/lesson9/user/user.txt";
         File file = new File(path);
         if (file.exists() && del) {
+            file.delete();
             System.out.println("File's delete");
         } else if (!file.exists() && del) {
             System.out.println("File's already deleted");

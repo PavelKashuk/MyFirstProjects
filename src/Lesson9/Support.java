@@ -9,8 +9,8 @@ public final class Support extends User {
     public Support() {
     }
 
-    public Support(String name, String surname, String email, String pasword, String sex, String country) {
-        super(name, surname, email, pasword, sex, country);
+    public Support(String name, String surname, String email, String password, String sex, String country) {
+        super(name, surname, email, password, sex, country);
     }
 
     public boolean checkString(String string) throws IOException {

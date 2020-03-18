@@ -31,7 +31,7 @@ public class Main {
         user.read("user");
         user.write();
         Support support = new Support();
-        support.checkString("Bob");
+        support.checkString("user");
         Admin admin = new Admin();
         admin.checkAndDelete(true);
         instanceOfCheck(user);
